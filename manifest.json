@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Volume Booster for Video",
+  "version": "1.0",
+  "description": "Boost video volume on any webpage using Web Audio API.",
+  "permissions": ["storage","scripting", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+    
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

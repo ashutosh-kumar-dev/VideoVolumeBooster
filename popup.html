@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video+ Volume Booster</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #181c24;
+      margin: 0;
+      padding: 0;
+      width: 320px;
+      color: #f3f6fa;
+      min-height: 100px;
+    }
+    .card {
+      background: linear-gradient(135deg, #232a36 60%, #1a1f27 100%);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(20, 30, 60, 0.25);
+      margin: 24px 14px 12px 14px;
+      padding: 28px 20px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      border: 1.5px solid #232a36;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.35em;
+      color: #6ec1e4;
+      text-align: center;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      text-shadow: 0 2px 8px #10131a66;
+    }
+    .input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    #volumeInput {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1.5px solid #2d3748;
+      border-radius: 8px;
+      font-size: 1em;
+      outline: none;
+      background: #232a36;
+      color: #f3f6fa;
+      transition: border 0.2s, background 0.2s;
+      box-shadow: 0 1px 2px #0002;
+    }
+    #volumeInput:focus {
+      border: 1.5px solid #6ec1e4;
+      background: #232a36;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    button {
+      flex: 1;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 0;
+      font-size: 1em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.18s, box-shadow 0.18s, color 0.18s;
+      box-shadow: 0 1px 4px #0003;
+      outline: none;
+    }
+    #boostBtn {
+      background: linear-gradient(90deg, #2196f3 60%, #21cbf3 100%);
+      color: #fff;
+    }
+    #boostBtn:hover {
+      background: linear-gradient(90deg, #1761c7 60%, #1ad1e8 100%);
+    }
+    #normalBtn {
+      background: #313846;
+      color: #bfc9db;
+      border: 1.2px solid #444b5a;
+    }
+    #normalBtn:hover {
+      background: #232a36;
+      color: #fff;
+    }
+    #decreaseBtn {
+      background: linear-gradient(90deg, #fbc02d 60%, #ff9800 100%);
+      color: #232a36;
+    }
+    #decreaseBtn:hover {
+      background: linear-gradient(90deg, #f9a825 60%, #ffb300 100%);
+      color: #181c24;
+    }
+    #status {
+      margin-top: 10px;
+      min-height: 18px;
+      text-align: center;
+      font-size: 1em;
+      color: #ff7675;
+      font-weight: 500;
+      letter-spacing: 0.1px;
+      text-shadow: 0 1px 2px #0006;
+    }
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #6ec1e4;
+      letter-spacing: 0.2px;
+      opacity: 0.7;
+      text-shadow: 0 1px 2px #0008;
+    }
+    ::selection {
+      background: #2196f3;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>
+      <svg width="26" height="26" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:7px;opacity:.85">
+        <path fill="#6ec1e4" d="M7 9v6h4l5 5V4l-5 5H7z"/>
+      </svg>
+      Video+ Volume Booster
+    </h2>
+    <div class="input-row">
+      <input type="number" id="volumeInput" min="0.1" step="0.1" placeholder="Enter value (e.g. 1.5)" />
+    </div>
+    <div class="btn-group">
+      <button id="boostBtn" title="Boost volume above normal">Boost</button>
+      <button id="normalBtn" title="Set volume to normal (1x)">Normal</button>
+      <button id="decreaseBtn" title="Decrease volume below normal">Decrease</button>
+    </div>
+
+  <div class="input-row" style="justify-content: space-between;">
+  <label for="enableToggle" style="font-size: 0.95em;">Extension Enabled</label>
+  <input type="checkbox" id="enableToggle" checked />
+</div>
+
+
+    <div id="status"></div>
+  </div>
+  <div class="footer">by Turbo</div>
+  <script src="popup.js"></script>
+</body>
+</html>
